@@ -6,7 +6,7 @@ vector<int> lgpm(vector<int> nums){
     // split the vector with 0
     vector<vector<int>> sp_nums = {{-1,0,0,0,0}};
 
-    for (int i = 0, k = 0; i < nums.size(); i++)
+    for (int i = 0, k = 0; i < nums.size(); ++i)
     {
         if (nums[i]>0)
         {
@@ -54,18 +54,7 @@ vector<int> lgpm(vector<int> nums){
         }
     }
     
-
     return sp_nums[k_max];
-
-    // replace -- with ++
-    for (int i = 0; i < nums.size()-1; i++)
-    {
-        if (nums[i]<0 && nums[i+1]<0)
-        {
-            nums[i] *= -1;
-            nums[i+1] *= -1;
-        }
-    }
     
     // // split the vector with 0 and -
     // int sp_start = 0, sp_end = 1, break_mark = 0, sp_start_mark = sp_end_mark=0;
@@ -99,6 +88,6 @@ vector<int> lgpm(vector<int> nums){
 } 
 
 int main(){
-    auto re = lgpm({1,0,-1,-1,2,1,0,0,1});
+    auto re = lgpm({-1,-2,-3,0,1});
     return 0;
 }
