@@ -4,9 +4,14 @@ using namespace std;
 vector<int> lgpm(vector<int> nums){
     
     // split the vector with 0
-    vector<vector<int>> sp_nums = {{-1,0,0,0,0}};
+    
+    int i_first = 0;
+    while (nums[i_first] == 0){
+        ++i_first;
+    }
+    vector<vector<int>> sp_nums = {{-1,0,0,i_first,0}};
 
-    for (int i = 0, k = 0; i < nums.size(); ++i)
+    for (int i = i_first, k = 0; i < nums.size(); ++i)
     {
         if (nums[i]>0)
         {
@@ -44,7 +49,7 @@ vector<int> lgpm(vector<int> nums){
         }
         else
         {
-            length_k = sp_nums[k][4] - sp_nums[k][0] > sp_nums[k][1]-sp_nums[k][3] ? sp_nums[k][4] - sp_nums[k][0] : sp_nums[k][1]-sp_nums[k][3];
+            length_k = sp_nums[k][4] - sp_nums[k][0] > sp_nums[k][1]-sp_nums[k][3] ? sp_nums[k][4] - sp_nums[k][0] -1 : sp_nums[k][1]-sp_nums[k][3];
         }
         
         if (length_k>length_max)
@@ -88,6 +93,6 @@ vector<int> lgpm(vector<int> nums){
 } 
 
 int main(){
-    auto re = lgpm({-1,-2,-3,0,1});
+    auto re = lgpm({0,0,-1,-2,-3,0,1});
     return 0;
 }
