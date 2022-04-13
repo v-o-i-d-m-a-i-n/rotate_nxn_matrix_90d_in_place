@@ -1,0 +1,71 @@
+(base) 404@ubuntu:/repodir$ sudo git clone https://gitclone.com/github.com/v-o-i-d-m-a-i-n/rotate_nxn_matrix_90d_in_place.git
+[sudo] password for 404: 
+Cloning into 'rotate_nxn_matrix_90d_in_place'...
+remote: 枚举对象: 3, 完成.
+remote: 对象计数中: 100% (3/3), 完成.
+remote: 压缩对象中: 100% (2/2), 完成.
+remote: 总共 3 （差异 0），复用 3 （差异 0）
+Unpacking objects: 100% (3/3), done.
+(base) 404@ubuntu:/repodir$ cd /repodir/rotate_nxn_matrix_90d_in_place
+(base) 404@ubuntu:/repodir/rotate_nxn_matrix_90d_in_place$ git remote show origin
+* remote origin
+  Fetch URL: https://gitclone.com/github.com/v-o-i-d-m-a-i-n/rotate_nxn_matrix_90d_in_place.git
+  Push  URL: https://gitclone.com/github.com/v-o-i-d-m-a-i-n/rotate_nxn_matrix_90d_in_place.git
+  HEAD branch: main
+  Remote branch:
+    main tracked
+  Local branch configured for 'git pull':
+    main merges with remote main
+  Local ref configured for 'git push':
+    main pushes to main (up to date)
+(base) 404@ubuntu:/repodir/rotate_nxn_matrix_90d_in_place$ sudo git remote add mg 404@10.147.19.149:/repodir/longestpositive
+(base) 404@ubuntu:/repodir/rotate_nxn_matrix_90d_in_place$ git fetch mg
+The authenticity of host '10.147.19.149 (10.147.19.149)' can't be established.
+RSA key fingerprint is SHA256:4lLJQhCxsaxx27ktM9NZ6G4YfeRh/OnPGjjKzdEpC2U.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.147.19.149' (RSA) to the list of known hosts.
+404@10.147.19.149's password: 
+warning: no common commits
+remote: Counting objects: 15, done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 15 (delta 4), reused 0 (delta 0)
+Unpacking objects: 100% (15/15), done.
+From 10.147.19.149:/repodir/longestpositive
+ * [new branch]      master     -> mg/master
+(base) 404@ubuntu:/repodir/rotate_nxn_matrix_90d_in_place$ git branch
+* main
+(base) 404@ubuntu:/repodir/rotate_nxn_matrix_90d_in_place$ git checkout -b master mg/master
+error: chmod on /repodir/rotate_nxn_matrix_90d_in_place/.git/config.lock failed: Operation not permitted
+error: chmod on /repodir/rotate_nxn_matrix_90d_in_place/.git/config.lock failed: Operation not permitted
+Branch 'master' set up to track remote branch 'master' from 'mg'.
+Switched to a new branch 'master'
+(base) 404@ubuntu:/repodir/rotate_nxn_matrix_90d_in_place$ git branch
+  main
+* master
+(base) 404@ubuntu:/repodir/rotate_nxn_matrix_90d_in_place$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+(base) 404@ubuntu:/repodir/rotate_nxn_matrix_90d_in_place$ git merge master
+fatal: refusing to merge unrelated histories
+(base) 404@ubuntu:/repodir/rotate_nxn_matrix_90d_in_place$ sudo git merge master --allow-unrelated-histories
+Merge made by the 'recursive' strategy.
+ .gitignore                    |  2 ++
+ .vscode/c_cpp_properties.json | 19 ++++++++++
+ .vscode/launch.json           | 34 ++++++++++++++++++
+ .vscode/settings.json         |  7 ++++
+ .vscode/tasks.json            | 68 +++++++++++++++++++++++++++++++++++
+ longestpositive.cpp           | 98 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 6 files changed, 228 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .vscode/c_cpp_properties.json
+ create mode 100644 .vscode/launch.json
+ create mode 100644 .vscode/settings.json
+ create mode 100644 .vscode/tasks.json
+ create mode 100644 longestpositive.cpp
+(base) 404@ubuntu:/repodir/rotate_nxn_matrix_90d_in_place$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+(base) 404@ubuntu:/repodir/rotate_nxn_matrix_90d_in_place$
